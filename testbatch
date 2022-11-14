@@ -1,0 +1,5 @@
+ls; echo it works
+ls -l ; who
+echo hello world
+pwd
+ls -l | ls -a | sort
