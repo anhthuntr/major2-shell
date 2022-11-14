@@ -63,7 +63,6 @@ int pipeCheck(char *args)
 
 //to read a single line input from command
 char* readLine() {
-/*
 	char *input = NULL;
 	size_t sz = 0;
 	ssize_t line = getline(&input, &sz, stdin);
@@ -74,37 +73,7 @@ char* readLine() {
 		exit(1);
 	}
 	return input;
-*/
-  int bufsize = BUFSIZE;
-  int position = 0;
-  char *buffer = malloc(sizeof(char) * bufsize);
-  int c;
-  if (!buffer) {
-    fprintf(stderr, "allocation error\n");
-    exit(EXIT_FAILURE);
-  }
-  while (1) {
-    c = getchar();
-    if (c == EOF) {
-      exit(EXIT_SUCCESS);
-    } else if (c == '\n') {
-      buffer[position] = '\0';
-      return buffer;
-    } else {
-      buffer[position] = c;
-    }
-    position++;
-
-    if (position >= bufsize) {
-      bufsize += BUFSIZE;
-      buffer = realloc(buffer, bufsize);
-      if (!buffer) {
-        fprintf(stderr, "allocation error\n");
-        exit(EXIT_FAILURE);
-      }
-    }
-  }
-  return buffer;
+ 
 }
 
 //to split a line and tokenize a string
