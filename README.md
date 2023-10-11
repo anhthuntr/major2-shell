@@ -4,8 +4,6 @@ major2 executable name
 
 make clean to remove executable and .o files
 
-All commands support input and output redirection. Both can be done on the same command.
-
 Design Overview:
 Running the program with no arguments will put it in interactive mode where the user can change directory, look at their history, and other things.
 Multiple commands can be put on the same line if they are separated by a semicolon.
